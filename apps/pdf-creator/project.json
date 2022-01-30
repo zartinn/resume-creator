@@ -1,0 +1,52 @@
+{
+  "root": "apps/pdf-creator",
+  "sourceRoot": "apps/pdf-creator/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/pdf-creator",
+        "main": "apps/pdf-creator/src/main.ts",
+        "tsConfig": "apps/pdf-creator/tsconfig.app.json",
+        "assets": ["apps/pdf-creator/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/pdf-creator/src/environments/environment.ts",
+              "with": "apps/pdf-creator/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "pdf-creator:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/pdf-creator/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/pdf-creator"],
+      "options": {
+        "jestConfig": "apps/pdf-creator/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

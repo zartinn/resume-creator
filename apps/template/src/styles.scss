@@ -1,0 +1,422 @@
+/* You can add global styles to this file, and also import other style files */
+/* Your styles goes here. */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./assets/fonts/Quicksand-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poiret One';
+    src: url('./assets/fonts/PoiretOne-Regular.ttf');
+}
+
+:root {
+    /* --ambient: #c50000;
+    --ambient-alt: #c5000082; */
+    --ambient: #006ac5;
+    --ambient-alt: #006ac582;
+    --foreground: black;
+    --background: #faffff;
+}
+
+html {
+    -webkit-print-color-adjust: exact;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand";
+}
+
+.resumeCanvas {
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.5in;
+    width: 8.5in;
+    height: 12in;
+    /* background-color: rgba(252, 232, 221, 0.027); */
+    -webkit-box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    text-align: justify;
+    font-size: 12pt;
+}
+
+h1 {
+    font-family: "Poiret One";
+    font-weight: bold;
+    font-size: 18pt;
+    color: var(--ambient);
+}
+
+h2 {
+    font-family: "Quicksand";
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+h3 {
+    font-size: 14pt;
+}
+
+body {
+    background: white;
+}
+
+img {
+    height: 22px;
+}
+
+body a:link,
+body a:visited {
+    text-decoration: none;
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--ambient-alt);
+    box-shadow: 0px 4px 5px -6px black;
+}
+
+header >div {
+    max-width: 36%;
+}
+
+header .right p, header .right a {
+    text-align: right;    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .right p:not(:last-child), header .right a:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+header .image {
+    position: absolute;
+    height: 118px;
+    top: 6px;
+    width: 118px;
+    left: 43%;
+    /* border: 4px solid #006ac5; */
+    border: 4px solid var(--ambient-alt);
+    border-radius: 50%;
+    box-shadow: 0px 2px 9px -3px black;
+}
+header .image img {
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+
+header .right img {
+    margin-left: 7px;
+}
+
+main {
+    flex-grow: 1;
+}
+
+main >div:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/* main .areas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+} */
+
+.expertise {
+    margin-top: 10px;
+}
+
+main h1 {
+    margin-bottom: 10px;
+}
+
+.left .education {
+    /* margin-top: 60px; */
+    margin-top: 10px;
+}
+
+.left .soft-skills {
+    margin-top: 80px;
+}
+
+.languages {
+    /* margin-top: 10px; */
+    margin-top: 60px;
+}
+
+.interests, .references {
+    margin-top: 60px;
+}
+
+.references p, .languages p, .interests p {
+    text-align: initial;
+    /* margin-bottom: 5px; */
+}
+
+.other-experience {
+    margin-top: 25px;
+}
+
+.other-experience h4 {
+    max-width: 70%;
+}
+
+.other-experience ul {
+    margin-top: 15px;
+}
+
+.other-experience .work-place {
+    align-items: flex-start;
+}
+
+.references div {
+    margin-bottom: 15px;
+}
+.references .number, main a {
+    opacity: 0.65;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+.references .linkedin {
+    opacity: 0.65;
+    text-decoration: underline;
+}
+
+.interests div {
+    margin-top: 15px
+}
+
+ul {
+    margin-left: 25px;
+}
+
+.left2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .areas >span {
+    padding: 10px;
+    height: 10px;
+    background-color: var(--ambient);
+    border-radius: 5px;
+    color: white;
+    margin-right: 10px;
+    display: flex;
+    min-width: 52px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main .education >div:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+main .education img {
+    height: 13px;
+    margin-right: 7px;
+}
+
+main .education p {
+    display: flex;
+    align-items: center;
+    font-size: 10pt;
+    margin-top: 5px;
+}
+
+.areas >div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.areas .bar {
+    width: 90px;
+    height: 10px;
+    position: absolute;
+    right: 25px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+    border: 1px solid var(--ambient-alt);
+}
+
+.bar.e100::after {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bar.e80::after {
+    width: 80%;
+}
+
+.bar.e90::after {
+    width: 90%;
+}
+
+.bar.e60::after {
+    width: 65%;
+}
+
+.areas .bar::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: var(--ambient);
+
+    left: 0;
+}
+
+.date {
+    opacity: 0.65;
+    display: flex;
+    align-items: center;
+}
+
+.date img {
+    height: 13px;
+    margin-left: 7px;
+}
+
+main .language {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+main {
+    display: flex;
+}
+
+main .achievments {
+    margin-top: 25px;
+}
+
+main .experience {
+    margin-top: 10px;
+}
+
+main .experience img {
+    height: 13px;
+    margin-left: 7px;
+}
+
+main .experience p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+main .right h1 {
+    margin-bottom: 5px;
+}
+
+main .right h4 {
+    font-size: 12pt;
+}
+
+main .achievments .marker {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: var(--ambient);
+    margin-right: 12px;
+    flex-shrink: 0;
+    margin-top: 7px;
+}
+
+main .achievments .list-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+main .work-place {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+main .left {
+    flex-basis: 33%;
+    border-right: 1px solid var(--ambient-alt);
+    margin-right: 25px;
+    height: 101%;
+    box-shadow: 4px 0px 5px -6px black;
+}
+.right {
+    flex-basis: 70%;
+}
+.right.full {
+    flex-basis: 100%;
+}
+
+.project:not(:first-of-type) {
+    margin-top: 20px;
+}
+
+main .language p {
+    min-width: 80px;
+}
+
+.circle {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 50px;
+    border: 1px solid var(--ambient-alt);
+    margin-right: 5px;
+}
+
+.circle.filled {
+    background-color: var(--ambient);
+}
+
+main .interests p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+main .interests img {
+    height: 15px;
+    margin-right: 7px;
+}
+
+.rest {
+    display: flex;
+}
+
+.rest >div {
+    flex-basis: 50%;
+}

@@ -1,6 +1,6 @@
 {
-  "root": "apps/resume-creator",
-  "sourceRoot": "apps/resume-creator/src",
+  "root": "apps/template",
+  "sourceRoot": "apps/template/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,17 +9,17 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/resume-creator",
-        "index": "apps/resume-creator/src/index.html",
+        "outputPath": "dist/apps/template",
+        "index": "apps/template/src/index.html",
         "baseHref": "/",
-        "main": "apps/resume-creator/src/main.tsx",
-        "polyfills": "apps/resume-creator/src/polyfills.ts",
-        "tsConfig": "apps/resume-creator/tsconfig.app.json",
+        "main": "apps/template/src/main.tsx",
+        "polyfills": "apps/template/src/polyfills.ts",
+        "tsConfig": "apps/template/tsconfig.app.json",
         "assets": [
-          "apps/resume-creator/src/favicon.ico",
-          "apps/resume-creator/src/assets"
+          "apps/template/src/favicon.ico",
+          "apps/template/src/assets"
         ],
-        "styles": ["apps/resume-creator/src/styles.scss"],
+        "styles": ["apps/template/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -27,8 +27,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/resume-creator/src/environments/environment.ts",
-              "with": "apps/resume-creator/src/environments/environment.prod.ts"
+              "replace": "apps/template/src/environments/environment.ts",
+              "with": "apps/template/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -43,12 +43,12 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "resume-creator:build",
+        "buildTarget": "template:build",
         "hmr": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "resume-creator:build:production",
+          "buildTarget": "template:build:production",
           "hmr": false
         }
       }
@@ -57,14 +57,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/resume-creator/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/template/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/resume-creator"],
+      "outputs": ["coverage/apps/template"],
       "options": {
-        "jestConfig": "apps/resume-creator/jest.config.js",
+        "jestConfig": "apps/template/jest.config.js",
         "passWithNoTests": true
       }
     }
