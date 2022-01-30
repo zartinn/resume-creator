@@ -1,0 +1,73 @@
+{
+  "root": "apps/resume-creator",
+  "sourceRoot": "apps/resume-creator/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/resume-creator",
+        "index": "apps/resume-creator/src/index.html",
+        "baseHref": "/",
+        "main": "apps/resume-creator/src/main.tsx",
+        "polyfills": "apps/resume-creator/src/polyfills.ts",
+        "tsConfig": "apps/resume-creator/tsconfig.app.json",
+        "assets": [
+          "apps/resume-creator/src/favicon.ico",
+          "apps/resume-creator/src/assets"
+        ],
+        "styles": ["apps/resume-creator/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/resume-creator/src/environments/environment.ts",
+              "with": "apps/resume-creator/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "resume-creator:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "resume-creator:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/resume-creator/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/resume-creator"],
+      "options": {
+        "jestConfig": "apps/resume-creator/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

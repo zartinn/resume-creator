@@ -1,0 +1,28 @@
+{
+  "root": "apps/resume-creator-e2e",
+  "sourceRoot": "apps/resume-creator-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/resume-creator-e2e/cypress.json",
+        "devServerTarget": "resume-creator:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "resume-creator:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/resume-creator-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["resume-creator"]
+}
