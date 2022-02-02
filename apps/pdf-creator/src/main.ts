@@ -1,28 +1,30 @@
-import * as puppeteer from 'puppeteer';
-import { createWriteStream } from 'fs';
+/**
+ * This is not a production server yet!
+ * This is only a minimal backend to get started.
+ */
 
-async function generate() {
-    const path = process.argv[2];
-    if (!path) {
-        console.error('Pass path as arguement with --args=\'/path/to/test.pdf\'');
-        return;
-    }
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto('http://localhost:4201'); 
-    const pdfBuffer = await page.pdf();
+import * as express from 'express';
+import { unlinkSync } from 'fs';
+import { generatePDF } from './app/generate-pdf';
 
-    
-    await page.close();
-    await browser.close();
-    createWriteStream(path).write(pdfBuffer, (err) => {
-        if (err) {
-            console.error('Write unsuccesful: ', err);
-        } else {
-            console.log('Write successful');
-        }
+var cors = require('cors')
+const app = express();
+app.use(cors());
+app.use(express.json())
+
+app.post('/generate-pdf', async (req, res) => {
+  try {
+    const path = await generatePDF(req.body.content);
+    res.download(path, () => {
+      unlinkSync(path);
     });
-    return pdfBuffer;
-}
+  } catch (err) {
+    res.status(500).send({message: 'could not create pdf'});
+  }
+});
 
-generate();
+const port = process.env.port || 3333;
+const server = app.listen(port, () => {
+  console.log(`Listening at http://localhost:${port}/generate-pdf`);
+});
+server.on('error', console.error);

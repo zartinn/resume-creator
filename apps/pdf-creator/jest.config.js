@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'resume-pdf-creator',
+  displayName: 'pdf-creator',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/resume-pdf-creator',
+  coverageDirectory: '../../coverage/apps/pdf-creator',
 };
