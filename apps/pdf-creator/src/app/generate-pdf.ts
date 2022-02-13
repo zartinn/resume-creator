@@ -8,7 +8,7 @@ export async function generatePDF(html: string): Promise<string> {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('file://' + assetPath + '/temp.html');
-  const pdfBuffer = await page.pdf();
+  const pdfBuffer = await page.pdf({ format: 'a4' });
   unlinkSync(assetPath + '/temp.html');
   await page.close();
   await browser.close();

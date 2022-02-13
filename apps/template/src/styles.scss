@@ -42,6 +42,12 @@ html {
     box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
 }
 
+.printing {
+    .resumeCanvas {
+        box-shadow: none;
+    }
+}
+
 p {
     text-align: justify;
     font-size: 12pt;
@@ -149,6 +155,9 @@ main >div:not(:last-child) {
 
 .expertise {
     margin-top: 10px;
+    p {
+        max-width: 100px;
+    }
 }
 
 main h1 {
@@ -164,13 +173,23 @@ main h1 {
     margin-top: 80px;
 }
 
-.languages {
-    /* margin-top: 10px; */
-    margin-top: 60px;
+.quick-info:not(:first-child) {
+    margin-top: 80px;
 }
 
-.interests, .references {
-    margin-top: 60px;
+.work-place-wrapper {
+    margin-top: 30px;
+}
+
+h1 + .work-place-wrapper {
+    margin-top: 10px;
+}
+
+.quick-info {
+    p {
+        text-align: start;
+        padding-right: 10px;
+    }
 }
 
 .references p, .languages p, .interests p {
@@ -246,6 +265,7 @@ main .education >div:not(:last-child) {
 main .education img {
     height: 13px;
     margin-right: 7px;
+    margin-left: 0;
 }
 
 main .education p {
@@ -283,6 +303,10 @@ main .education p {
 
 .bar.e90::after {
     width: 90%;
+}
+
+.bar.e70::after {
+    width: 70%;
 }
 
 .bar.e60::after {
@@ -346,7 +370,7 @@ main .right h4 {
     font-size: 12pt;
 }
 
-main .achievments .marker {
+main .marker {
     height: 8px;
     width: 8px;
     border-radius: 50%;
@@ -356,7 +380,7 @@ main .achievments .marker {
     margin-top: 7px;
 }
 
-main .achievments .list-item {
+main .list-item {
     display: flex;
     margin-bottom: 10px;
 }
@@ -364,8 +388,14 @@ main .achievments .list-item {
 main .work-place {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 5px;
+    p {
+        flex-shrink: 0;
+    }
+    h4 {
+        padding-right: 10px;
+    }
 }
 
 main .left {

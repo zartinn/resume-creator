@@ -25,18 +25,18 @@
             { "name": "german", "knowledge": 5 },
             { "name": "english", "knowledge": 4 }
         ],
-        "technical-skills": [
+        "technicalSkills": [
             { "name": "JavaScript", "score": 100 }, 
             { "name": "TypeScript", "score": 100 },
             { "name": "Angular", "score": 100 }
         ],
-        "soft-skills": [
+        "softSkills": [
             { "name": "Communication", "score": 100},
             { "name": "Leadership", "score": 100}
         ]
     },
     "main": {
-        "work-experience": [{
+        "workExperience": [{
             "date": "2016 - present",
             "title": "Company SE",
             "paragraphs": [{ "disabled": false, "content": "Worked on React SPA"}]

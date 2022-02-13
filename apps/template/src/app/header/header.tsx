@@ -10,13 +10,18 @@ import data from '../../assets/data.json';
 export interface HeaderProps {}
 
 export function Header(props: HeaderProps) {
+  const getJobTitle = () => data.general.jobtitle ? <h2>{data.general.jobtitle}</h2> : <></>
+  const getIntroduction = () => data.general.introduction ? <p>{data.general.introduction}</p> : <></>
+  const getLinkedIn = () => data.general.linkedin ? <a href={`https://${data.general.linkedin}`}>{data.general.linkedin}<img src={linkedin} /></a> : <></>;
+  const getGithub = () => data.general.github ? <a href={`https://${data.general.github}`}>{data.general.github}<img src={github} /></a> : <></>
+
   return (
     <>
       <header>
         <div className="left">
           <h1>{data.general.name}</h1>
-          <h2>{data.general.jobtitle}</h2>
-          <p>{data.general.introduction}</p>
+          {getJobTitle()}
+          {getIntroduction()}
         </div>
         {/* <div className="image">
           <img src="assets/profil-quadrat.png" />
@@ -34,14 +39,8 @@ export function Header(props: HeaderProps) {
             {data.general.location}
             <img src={location} />
           </p>
-          <a href={`https://${data.general.linkedin}`}>
-            {data.general.linkedin}
-            <img src={linkedin} />
-          </a>
-          <a href={`https://${data.general.github}`}>
-            {data.general.github}
-            <img src={github} />
-          </a>
+          {getLinkedIn()}
+          {getGithub()}
         </div>
       </header>
     </>
