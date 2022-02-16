@@ -10,10 +10,10 @@ import data from '../../../assets/data.json';
 export interface HeaderProps {}
 
 export function Header(props: HeaderProps) {
-  const getJobTitle = () => data.general.jobtitle ? <h2>{data.general.jobtitle}</h2> : <></>
-  const getIntroduction = () => data.general.introduction ? <p>{data.general.introduction}</p> : <></>
-  const getLinkedIn = () => data.general.linkedin ? <a href={`https://${data.general.linkedin}`}>{data.general.linkedin}<img src={linkedin} /></a> : <></>;
-  const getGithub = () => data.general.github ? <a href={`https://${data.general.github}`}>{data.general.github}<img src={github} /></a> : <></>
+  const getJobTitle = () => data.general.jobtitle && <h2>{data.general.jobtitle}</h2>;
+  const getIntroduction = () => data.general.introduction && <p>{data.general.introduction}</p>;
+  const getLinkedIn = () => data.general.linkedin && <a href={`https://${data.general.linkedin}`}>{data.general.linkedin}<img src={linkedin} /></a>;
+  const getGithub = () => data.general.github && <a href={`https://${data.general.github}`}>{data.general.github}<img src={github} /></a>;
 
   return (
     <>

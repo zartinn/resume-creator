@@ -9,7 +9,7 @@ export interface EducationProps {
 export function Education(props: EducationProps) {
   return (
     <>
-      { !props.education || props.education.length === 0 ? <></> :
+      { props.education && props.education.length > 0 &&
 
         <div className="quick-info education">
           <h1>Bildung</h1>

@@ -8,7 +8,7 @@ export interface AchievmentsProps {
 export function Achievments(props: AchievmentsProps) {
   return (
     <>
-      { !props.achievments || props.achievments.length === 0 ? <></> : 
+      { props.achievments && props.achievments.length > 0 && 
       
         <div className="achievments">
           <h1>Achievments</h1>
