@@ -29,14 +29,15 @@ html {
     font-family: "Quicksand";
 }
 
+
 .resumeCanvas {
     margin: 0 auto;
     position: relative;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0.5in;
-    width: 8.5in;
-    height: 12in;
+    padding: 13mm;
+    width: 210mm;
+    height: 297mm;
     /* background-color: rgba(252, 232, 221, 0.027); */
     -webkit-box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
     box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
@@ -449,4 +450,17 @@ main .interests img {
 
 .rest >div {
     flex-basis: 50%;
+}
+
+.img {
+    background-color: black;
+    --webkit-mask-size: contain;
+    width: 22px;
+    height: 22px;
+}
+
+.img {
+    &.email {
+        --webkit-mask-image: url('assets/icons/mail.png');
+    }
 }

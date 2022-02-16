@@ -1,5 +1,6 @@
 import * as puppeteer from 'puppeteer';
 import { createWriteStream, writeFileSync, unlinkSync } from 'fs';
+import { firstValueFrom, timer } from 'rxjs';
 
 export async function generatePDF(html: string): Promise<string> {
   const assetPath = __dirname + '/assets';
@@ -8,6 +9,7 @@ export async function generatePDF(html: string): Promise<string> {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('file://' + assetPath + '/temp.html');
+  await firstValueFrom(timer(100));
   const pdfBuffer = await page.pdf({ format: 'a4' });
   unlinkSync(assetPath + '/temp.html');
   await page.close();

@@ -1,5 +1,5 @@
 import './main.module.scss';
-import dataJson from '../../assets/data.json';
+import dataJson from '../../../assets/data.json';
 import QuickInfos from './quick-infos/quick-infos';
 import MainContent from './main-content/main-content';
 

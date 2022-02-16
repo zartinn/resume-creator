@@ -1,0 +1,13 @@
+.shell {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        margin-bottom: 10px;
+    }
+
+    iframe {
+        width: 210mm;
+        height: 297mm;
+    }
+}

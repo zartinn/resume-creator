@@ -15,7 +15,7 @@ export function Languages(props: LanguagesProps) {
       <div className="quick-info languages">
         <h1>Sprachen</h1>
         {props.languages.map((lang, idx) =>
-          <div className="language" key={idx}><p>{lang.name}</p>{arr.map((circle, index) => <div className={'circle ' + (index < lang.knowledge ? 'filled' : '')}></div>)}</div>
+          <div className="language" key={idx}><p>{lang.name}</p>{arr.map((circle, index) => <div key={index} className={'circle ' + (index < lang.knowledge ? 'filled' : '')}></div>)}</div>
         )}
       </div>
       }

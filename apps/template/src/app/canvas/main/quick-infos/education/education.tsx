@@ -1,5 +1,5 @@
 import './education.module.scss';
-import calendar from '../../../../assets/icons/calendar.png';
+import calendar from '../../../../../assets/icons/calendar.png';
 
 /* eslint-disable-next-line */
 export interface EducationProps {

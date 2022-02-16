@@ -1,10 +1,10 @@
 import './header.module.scss';
-import phone from '../../assets/icons/phone.png';
-import mail from '../../assets/icons/mail.png';
-import location from '../../assets/icons/location.png';
-import linkedin from '../../assets/icons/linkedin.svg';
-import github from '../../assets/icons/github.png';
-import data from '../../assets/data.json';
+import phone from '../../../assets/icons/phone.png';
+import mail from '../../../assets/icons/mail.png';
+import location from '../../../assets/icons/location.png';
+import linkedin from '../../../assets/icons/linkedin.svg';
+import github from '../../../assets/icons/github.png';
+import data from '../../../assets/data.json';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -30,6 +30,7 @@ export function Header(props: HeaderProps) {
           <a href={`mailto:${data.general.email}`}>
             {data.general.email}
             <img src={mail} />
+            <div className="img email"></div>
           </a>
           <p>
             {data.general.phone}
