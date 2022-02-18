@@ -1,5 +1,4 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import './app.module.scss';
 import {
   BrowserRouter as Router,
   Route,

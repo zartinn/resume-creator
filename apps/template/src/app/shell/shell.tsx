@@ -1,8 +1,6 @@
-import { useEffect } from 'react';
-import download from 'downloadjs';
-import './shell.module.scss';
 import { usePdf } from './hooks/use-pdf';
 import styles from './shell.module.scss';
+import Configuration from './configuration/configuration';
 
 /* eslint-disable-next-line */
 export interface ShellProps {}
@@ -14,8 +12,9 @@ export function Shell(props: ShellProps) {
 
   return (
     <div className={styles['shell']}>
-      <button className='saveButton' onClick={() => savePdf()}>send</button>
-      <iframe src="./canvas"></iframe>
+      <button className='saveButton' onClick={savePdf}>send</button>
+      <Configuration></Configuration>
+      <iframe src="./canvas" scrolling="no"></iframe>
     </div>
   );
 }

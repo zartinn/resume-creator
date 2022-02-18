@@ -1,12 +1,15 @@
 {
     "general": {
         "name": "",
+        "jobtitle": "",
         "introduction": "",
-        "email": "",
-        "phone": "",
-        "location": "",
-        "github": "",
-        "linkedin": ""
+        "contact-information": {
+            "email": "",
+            "phone": "",
+            "location": "",
+            "github": "",
+            "linkedin": ""
+        }
     },
     "quick-info": {
         "education": [

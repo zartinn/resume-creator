@@ -1,12 +1,12 @@
-.img {
-    background-color: black;
-    --webkit-mask-size: contain;
-    width: 22px;
-    height: 22px;
-}
-
-.img {
-    &.email {
-        --webkit-mask-image: url('../../../assets/icons/mail.png');
+.header {
+    :global {   
+        .img {
+            width: 22px;
+            height: 22px;
+        }
+        
+        .right .img {
+            margin-left: 7px;
+        }
     }
 }

@@ -1,4 +1,4 @@
-import './main.module.scss';
+import styles from './main.module.scss';
 import dataJson from '../../../assets/data.json';
 import QuickInfos from './quick-infos/quick-infos';
 import MainContent from './main-content/main-content';
@@ -10,7 +10,7 @@ export function Main(props: MainProps) {
 
   return (
     <>
-      <main>
+      <main className={styles['main']}>
         <div className="left">
           <QuickInfos quickInfos={dataJson['quick-info']}></QuickInfos>
         </div>

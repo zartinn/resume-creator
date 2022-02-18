@@ -1,5 +1,5 @@
+import Icon from '../../../../components/icon/icon';
 import './experience.module.scss';
-import calendar from '../../../../../assets/icons/calendar.png';
 
 /* eslint-disable-next-line */
 export interface ExperienceProps {
@@ -16,7 +16,7 @@ export function Experience(props: ExperienceProps) {
             <div id={`experience_${idx}`} key={`experience_${idx}`} className="work-place-wrapper">
               <div className="work-place">
                 <h4>{exp.title}</h4>
-                <p>{exp.date}<img src={calendar}/></p>
+                <p>{exp.date}<Icon fileName='calendar.png'></Icon></p>
               </div>
               {exp.paragraphs.map((paragraph, idx_p) => 
                 paragraph.disabled && <p id={`paragraph_${idx_p}`} key={`paragraph_${idx_p}`}>{paragraph.content}</p>
