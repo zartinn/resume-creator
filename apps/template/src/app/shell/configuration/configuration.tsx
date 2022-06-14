@@ -1,15 +1,13 @@
 import './configuration.module.scss';
 
 /* eslint-disable-next-line */
-export interface ConfigurationProps {}
+export interface ConfigurationProps {
+  setNightMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 export function Configuration(props: ConfigurationProps) {
-  let templateRoot: HTMLElement;
   const onDaymodeChange = () => {
-    if (!templateRoot) {
-      templateRoot = document.querySelector('.canvasContainer');
-    }
-    templateRoot.classList.toggle('night');
+    props.setNightMode(nightMode => (!nightMode));
   }
 
   return (

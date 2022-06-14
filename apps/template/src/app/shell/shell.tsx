@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { usePdf } from '@resume-creator/shared';
 import styles from './shell.module.scss';
 import Configuration from './configuration/configuration';
@@ -9,15 +10,15 @@ import data from '../../assets/data.json';
 export interface ShellProps {}
 
 export function Shell(props: ShellProps) {
-
-  let { savePdf } = usePdf();
+  const [nightMode, setNightMode] = useState(false);
+  const { savePdf } = usePdf();
 
 
   return (
     <div className={styles['shell']}>
       <button className='saveButton' onClick={savePdf}>send</button>
-      <Configuration></Configuration>
-      <Canvas data={data}></Canvas>
+      <Configuration setNightMode={setNightMode}></Configuration>
+      <Canvas data={data} nightMode={nightMode}></Canvas>
     </div>
   );
 }
