@@ -14,7 +14,7 @@ export function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Shell/>}/>
-          <Route path="/canvas" element={<Canvas/>}/>
+          {/* <Route path="/canvas" element={<Canvas/>}/> */}
         </Routes>
       </Router>
     </>

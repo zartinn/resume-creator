@@ -1,0 +1,18 @@
+.configuration {
+    margin-bottom: 2em;
+    input {
+        margin-left: 0.5em;
+    }
+
+    button {
+        margin-left: 1em;
+    }
+}
+
+.sketchPicker {
+    position: absolute;
+    z-index: 10;
+    &.hidden {
+        display: none;
+    }
+}

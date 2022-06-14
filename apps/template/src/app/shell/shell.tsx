@@ -11,14 +11,15 @@ export interface ShellProps {}
 
 export function Shell(props: ShellProps) {
   const [nightMode, setNightMode] = useState(false);
+  const [color, setColor] = useState('#006ac5');
   const { savePdf } = usePdf();
 
 
   return (
     <div className={styles['shell']}>
       <button className='saveButton' onClick={savePdf}>send</button>
-      <Configuration setNightMode={setNightMode}></Configuration>
-      <Canvas data={data} nightMode={nightMode}></Canvas>
+      <Configuration setNightMode={setNightMode} color={color} setColor={setColor}></Configuration>
+      <Canvas data={data} nightMode={nightMode} color={color}></Canvas>
     </div>
   );
 }
