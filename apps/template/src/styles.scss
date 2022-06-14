@@ -12,7 +12,7 @@
     src: url('./assets/fonts/PoiretOne-Regular.ttf');
 }
 
-html {
+.canvasContainer {
     -webkit-print-color-adjust: exact;    
     /* --ambient: #c50000;
     --ambient-alt: #c5000082; */
@@ -68,18 +68,16 @@ h3 {
     font-size: 14pt;
 }
 
-body {
+.canvasContainer {
     background-color: var(--background);
     transition: background-color 300ms;
+    a:link, a:visited {
+        text-decoration: none;
+    }
 }
 
 img {
     height: 22px;
-}
-
-body a:link,
-body a:visited {
-    text-decoration: none;
 }
 
 .wrapper {

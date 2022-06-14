@@ -1,18 +1,20 @@
-import data from '../../../assets/data.json';
+import { useEffect } from 'react';
 import { useContactInformation } from './use-contact-information';
 
 /* eslint-disable-next-line */
-export interface HeaderProps {}
+export interface HeaderProps {
+  data?: any;
+}
 
 export function Header(props: HeaderProps) {
-  const getJobTitle = () => data.general.jobtitle && <h2>{data.general.jobtitle}</h2>;
-  const getIntroduction = () => data.general.introduction && <p>{data.general.introduction}</p>;
-  const { getContactInformation } = useContactInformation(data.general['contact-information']);
+  const getJobTitle = () => props.data.general.jobtitle && <h2>{props.data.general.jobtitle}</h2>;
+  const getIntroduction = () => props.data.general.introduction && <p>{props.data.general.introduction}</p>;
+  const { getContactInformation } = useContactInformation(props.data.general['contact-information']);
 
   return (
       <header>
         <div className="left">
-          <h1>{data.general.name}</h1>
+          <h1>{props.data.general.name}</h1>
           {getJobTitle()}
           {getIntroduction()}
         </div>
