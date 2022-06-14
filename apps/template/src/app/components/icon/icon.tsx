@@ -9,7 +9,7 @@ export function Icon(props: IconProps) {
   const assetPath = document.baseURI + 'assets/icons';
 
   return (
-    <div className="img" style={{ WebkitMaskImage: `url(${assetPath}/${props.fileName})`, display: 'inline-block' }}></div>
+    <span className="img" style={{ WebkitMaskImage: `url(${assetPath}/${props.fileName})`, display: 'inline-block' }}></span>
   );
 }
 

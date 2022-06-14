@@ -8,7 +8,7 @@ export interface CanvasProps {}
 export function Canvas(props: CanvasProps) {
   return (
     <>
-      <div className={styles['canvas'] + ' resumeCanvas'}>
+      <div className={'resumeCanvas'}>
         <div className="wrapper">
           <Header></Header>
           <Main></Main>

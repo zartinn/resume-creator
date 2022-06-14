@@ -1,0 +1,52 @@
+@mixin canvas {
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 13mm;
+    width: 210mm;
+    height: 297mm;
+    /* background-color: rgba(252, 232, 221, 0.027); */
+    -webkit-box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
+
+    @include canvas-img;
+}
+
+@mixin canvas-img {
+    .img {
+        background-color: var(--foreground);
+        transition: 300ms background-color;
+        -webkit-mask-size: contain;
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        width: 22px;
+        height: 22px;
+    }
+
+    header {
+        .img {
+            width: 22px;
+            height: 22px;
+        }
+        
+        .right .img {
+            margin-left: 7px;
+        }
+    }
+
+
+    main {
+        .img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .left .img {
+            margin-right: 7px;
+        }
+        .right .img {
+            margin-left: 7px;
+        }
+    }
+}

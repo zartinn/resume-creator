@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* Your styles goes here. */
+@import './app/canvas/styles/canvas.scss';
+
 @font-face {
     font-family: 'Quicksand';
     src: url('./assets/fonts/Quicksand-Regular.ttf');
@@ -10,7 +12,8 @@
     src: url('./assets/fonts/PoiretOne-Regular.ttf');
 }
 
-:root {
+html {
+    -webkit-print-color-adjust: exact;    
     /* --ambient: #c50000;
     --ambient-alt: #c5000082; */
     --ambient: #006ac5;
@@ -23,10 +26,6 @@
     }
 }
 
-html {
-    -webkit-print-color-adjust: exact;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -36,17 +35,9 @@ html {
 }
 
 
+
 .resumeCanvas {
-    margin: 0 auto;
-    position: relative;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 13mm;
-    width: 210mm;
-    height: 297mm;
-    /* background-color: rgba(252, 232, 221, 0.027); */
-    -webkit-box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
+    @include canvas;
 }
 
 .printing {

@@ -1,4 +1,3 @@
-import styles from './header.module.scss';
 import data from '../../../assets/data.json';
 import { useContactInformation } from './use-contact-information';
 
@@ -11,7 +10,7 @@ export function Header(props: HeaderProps) {
   const { getContactInformation } = useContactInformation(data.general['contact-information']);
 
   return (
-      <header className={styles['header']}>
+      <header>
         <div className="left">
           <h1>{data.general.name}</h1>
           {getJobTitle()}

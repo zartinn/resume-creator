@@ -1,4 +1,4 @@
-import { usePdf } from './hooks/use-pdf';
+import { usePdf } from '@resume-creator/shared';
 import styles from './shell.module.scss';
 import Configuration from './configuration/configuration';
 

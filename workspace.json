@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "pdf-creator": "apps/pdf-creator",
+    "shared": "libs/shared",
     "shell": "apps/shell",
     "shell-e2e": "apps/shell-e2e",
     "template": "apps/template"
